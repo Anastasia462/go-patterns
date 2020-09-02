@@ -6,6 +6,7 @@ const (
 	money  = 100
 	fame   = 100500
 )
+
 // Mediator ...
 type Mediator interface {
 	Notify(msg string)
@@ -18,9 +19,8 @@ type ConcreteMediator struct {
 	manager Manager
 }
 
-
 func (m *ConcreteMediator) Notify(msg string) {
-	if msg ==  makeAd{
+	if msg == makeAd {
 		m.manager.TakeFee(money)
 		m.blogger.MakeAd()
 	} else if msg == doneAd {
@@ -37,7 +37,6 @@ func СonnectСolleagues(blogger Blogger, manager Manager, sponsor Sponsor) {
 	manager.SetMediator(mediator)
 	sponsor.SetMediator(mediator)
 }
-
 
 // NewSponsor ...
 func NewSponsor(money float64, fame int) Sponsor {
@@ -75,4 +74,3 @@ func NewMediator(
 		manager: manager,
 	}
 }
-

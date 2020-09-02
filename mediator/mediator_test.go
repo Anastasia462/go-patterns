@@ -4,6 +4,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
+
 const (
 	sponsorMoney = 1000
 )
@@ -12,7 +13,7 @@ func TestMediator(t *testing.T) {
 
 	blogger := NewBlogger(0, 0)
 	manager := NewManager(0, 0)
-	sponsor := NewSponsor(sponsorMoney,0)
+	sponsor := NewSponsor(sponsorMoney, 0)
 
 	СonnectСolleagues(blogger, manager, sponsor)
 
@@ -32,5 +33,4 @@ func TestMediator(t *testing.T) {
 	assert.Equal(t, expectManagerMoney, managerMoney)
 	assert.Equal(t, expectSponsorMoney, sponsorMoney)
 	assert.Equal(t, expectSponsorFame, sponsorFame)
-
 }
